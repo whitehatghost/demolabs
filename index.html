@@ -1,35 +1,147 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Tienda Test Costa Rica</title>
+  <title>Tienda Demo Costa Rica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Snipcart CSS -->
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 2em; }
-    .product { border: 1px solid #ccc; padding: 1em; margin: 1em; display: inline-block; width: 250px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f8fb;
+      color: #333;
+    }
+
+    header {
+      background: #009688;
+      color: white;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 2em;
+      text-align: center;
+    }
+
+    .product {
+      display: inline-block;
+      background: white;
+      border-radius: 10px;
+      padding: 1em;
+      margin: 1em;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 250px;
+    }
+
+    .product h2 {
+      color: #009688;
+    }
+
+    .snipcart-add-item {
+      background: #009688;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #e0e0e0;
+      color: #555;
+      margin-top: 2em;
+    }
+
+    .cart-button {
+      background: white;
+      color: #009688;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Mi Tienda de Prueba</h1>
+  <!-- Header / Navegación -->
+  <header>
+    <div><strong>TiendaDemo.CR</strong></div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#" class="snipcart-checkout cart-button">🛒 Carrito</a>
+    </nav>
+  </header>
 
-  <div class="product">
-    <h2>Producto Demo</h2>
-    <p>₡5000</p>
-    <button 
-      class="snipcart-add-item"
-      data-item-id="prod-1"
-      data-item-name="Producto Demo"
-      data-item-price="5000"
-      data-item-url="/"
-      data-item-description="Un producto de prueba">
-      Agregar al carrito
-    </button>
+  <!-- Contenido Principal -->
+  <div class="container">
+    <h1>Bienvenido a nuestra Tienda de Prueba 🇨🇷</h1>
+    <p>Compra segura y automatizada con bancos de Costa Rica</p>
+
+    <div id="productos">
+      <div class="product">
+        <h2>Taza Pura Vida</h2>
+        <p>₡5000</p>
+        <button 
+          class="snipcart-add-item"
+          data-item-id="taza-001"
+          data-item-name="Taza Pura Vida"
+          data-item-price="5000"
+          data-item-url="/"
+          data-item-description="Una taza con diseño costarricense">
+          Agregar al carrito
+        </button>
+      </div>
+
+      <div class="product">
+        <h2>Camisa Costa Rica</h2>
+        <p>₡1000</p>
+        <button 
+          class="snipcart-add-item"
+          data-item-id="camisa-001"
+          data-item-name="Camisa Costa Rica"
+          data-item-price="12000"
+          data-item-url="/"
+          data-item-description="Camisa deportiva con bandera CR">
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
   </div>
 
+  <!-- Sección de Contacto -->
+  <div class="container" id="contacto">
+    <h2>Contacto</h2>
+    <p>Escríbenos a: <a href="mailto:demo@demolabs.lat.com">tienda@demolabs.lat</a></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 TiendaDemo.CR – Proyecto de prueba para integración BNCR / BAC
+  </footer>
+
+  <!-- Snipcart Script + Key -->
   <div hidden id="snipcart" data-api-key="ZGE4NjAzNDEtOTI4NS00Zjg4LTk3MzItMjdmZGYxMTk3ZjUxNjM4ODQ3NDkxODY0MzUwNjcz" data-config-modal-style="side"></div>
-  <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+  <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 
 </body>
 </html>
