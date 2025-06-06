@@ -2,190 +2,134 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Poker Store</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
       margin: 0;
-      scroll-behavior: smooth;
+      font-family: 'Arial', sans-serif;
+      background-color: #111;
+      color: #fff;
     }
 
     header {
-      background-color: #c40000;
-      padding: 15px;
+      background-color: #c00;
+      padding: 1rem;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 2rem;
     }
 
     nav {
-      background-color: #111;
+      background-color: #000;
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
+      gap: 2rem;
+      padding: 0.5rem;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      padding: 8px 15px;
-      border-radius: 5px;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      background-color: #c40000;
+      color: #c00;
     }
 
-    section {
-      padding: 40px;
+    .container {
       max-width: 1000px;
       margin: auto;
-    }
-
-    .products {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
+      padding: 2rem;
     }
 
     .product {
-      background-color: #111;
-      border: 2px solid #c40000;
+      background-color: #222;
+      border: 1px solid #444;
       border-radius: 10px;
-      padding: 20px;
-      width: 250px;
-      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .product img {
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    .product button {
-      background-color: #c40000;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-
-    .cart-section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .cart-section li {
-      padding: 5px 0;
-    }
-
-    .checkout-btn {
-      background-color: #c40000;
-      color: #fff;
-      padding: 12px 25px;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    .contact-info {
-      background-color: #111;
-      padding: 20px;
+      max-width: 100%;
+      height: auto;
       border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .product h2 {
+      margin: 0.5rem 0;
+    }
+
+    .product p {
+      color: #ccc;
+    }
+
+    .buy-btn {
+      background-color: #c00;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-top: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .buy-btn:hover {
+      background-color: #a00;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #888;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Poker Store</h1>
+  </header>
 
-<header>
-  <h1>Poker Store</h1>
-</header>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Productos</a>
+    <a href="#">Contacto</a>
+  </nav>
 
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#productos">Productos</a>
-  <a href="#carrito">Carrito</a>
-  <a href="#contacto">Contacto</a>
-</nav>
-
-<section id="inicio">
-  <h2>Bienvenido a Poker Store</h2>
-  <p>Tu tienda de confianza para todo lo relacionado con el póker: mesas, fichas, cartas y más.</p>
-</section>
-
-<section id="productos">
-  <h2>Productos</h2>
-  <div class="products">
+  <div class="container">
+    <!-- Producto 1 -->
     <div class="product">
-      <img src="https://via.placeholder.com/250x150.png?text=Mesa+de+Póker" alt="Mesa de Poker">
-      <h3>Mesa de Póker</h3>
-      <p>$250.00</p>
-      <button onclick="addToCart('Mesa de Póker', 250)">Agregar al carrito</button>
+      <img src="https://cdn.pixabay.com/photo/2015/03/26/09/54/poker-690334_1280.jpg" alt="Mesa de Poker">
+      <h2>Mesa de Poker Profesional</h2>
+      <p>Mesa ovalada con superficie de fieltro verde y soportes de aluminio. Ideal para partidas profesionales o reuniones entre amigos.</p>
+      <a class="buy-btn" href="https://buy.onvopay.com/test_zQDiZuLsgiwLo-xW91R_t_1KUck" target="_blank">Comprar</a>
     </div>
 
+    <!-- Producto 2 -->
     <div class="product">
-      <img src="https://via.placeholder.com/250x150.png?text=Fichas+de+Póker" alt="Fichas de Poker">
-      <h3>Fichas de Póker</h3>
-      <p>$50.00</p>
-      <button onclick="addToCart('Fichas de Póker', 50)">Agregar al carrito</button>
+      <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/poker-chips-1839384_1280.jpg" alt="Fichas de Poker">
+      <h2>Set de Fichas de Poker (500 piezas)</h2>
+      <p>Fichas de arcilla de alta calidad con maletín de aluminio. Incluye fichas de distintos valores y baraja.</p>
+      <a class="buy-btn" href="https://buy.onvopay.com/test_zQDiZuLsgiwLo-xW91R_t_1KUck" target="_blank">Comprar</a>
     </div>
   </div>
-</section>
 
-<section id="carrito" class="cart-section">
-  <h2>Carrito de Compras</h2>
-  <ul id="cart-list"></ul>
-  <h3>Total: $<span id="total">0.00</span></h3>
-  <button class="checkout-btn" onclick="checkout()">Pagar con OnvoPay</button>
-</section>
-
-<section id="contacto">
-  <h2>Contacto</h2>
-  <div class="contact-info">
-    <p><strong>Email:</strong> contacto@pokerstore.com</p>
-    <p><strong>WhatsApp:</strong> +506 8888 8888</p>
-    <p><strong>Instagram:</strong> @pokerstore</p>
-  </div>
-</section>
-
-<script>
-  let cart = [];
-  let total = 0;
-
-  function addToCart(product, price) {
-    cart.push({ product, price });
-    total += price;
-    renderCart();
-    alert(`${product} ha sido agregado al carrito.`);
-  }
-
-  function renderCart() {
-    const list = document.getElementById('cart-list');
-    list.innerHTML = '';
-    cart.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = `${item.product} - $${item.price.toFixed(2)}`;
-      list.appendChild(li);
-    });
-    document.getElementById('total').textContent = total.toFixed(2);
-  }
-
-  function checkout() {
-    const apiKey = "onvo_test_publishable_key_7X2-rZVcXMqEuq3ij8g3rWj6pXZ1Bh_nAKJoqcOoMF6Mq4EKJAqsk5V6jmdZPTsbz6wu-vfgr-2bnd8rTK9CJA"; // Reemplaza esto con tu API key de OnvoPay
-    alert(`Procesando pago con OnvoPay (API Key: ${apiKey})...\nTotal: $${total.toFixed(2)}\nGracias por tu compra.`);
-    // Aquí puedes implementar OnvoPay SDK o su API real
-  }
-</script>
-
+  <footer>
+    &copy; 2025 Poker Store. Todos los derechos reservados.
+  </footer>
 </body>
 </html>
