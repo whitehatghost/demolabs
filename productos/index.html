@@ -1,279 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' https://cdn.snipcart.com 'unsafe-inline' 'unsafe-eval';
-  style-src 'self' https://cdn.snipcart.com https://fonts.googleapis.com https://fonts.bunny.net 'unsafe-inline';
-  font-src https://fonts.gstatic.com https://cdn.snipcart.com https://fonts.bunny.net;
-  img-src * data:;
-  connect-src 'self' https://cdn.snipcart.com https://app.snipcart.com https://payment.snipcart.com https://snipcart.com;
-  frame-src https://app.snipcart.com;
-">
+    default-src 'self';
+    script-src 'self' https://cdn.snipcart.com 'unsafe-inline' 'unsafe-eval';
+    style-src 'self' https://cdn.snipcart.com https://fonts.googleapis.com https://fonts.bunny.net 'unsafe-inline';
+    font-src https://fonts.gstatic.com https://cdn.snipcart.com https://fonts.bunny.net;
+    img-src * data:;
+    connect-src 'self' https://cdn.snipcart.com https://app.snipcart.com https://payment.snipcart.com https://snipcart.com;
+    frame-src https://app.snipcart.com;
+  ">
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="DENY" />
+  <title>Tienda Funcional</title>
 
-  <title>Tienda | La Casita del Bebé</title>
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500|Open+Sans:300,600" rel="stylesheet" />
+  <!-- Estilos -->
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
-
   <style>
-    :root {
-      --morado: #b38fd4;
-      --celeste: #a5d8ff;
-      --amarillo: #fff3b0;
-      --rosa: #fce3ee;
-      --blanco: #fff;
-    }
     body {
+      font-family: sans-serif;
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #fff url('assets/background.jpg') repeat;
+      padding: 0;
     }
     header {
-      background: linear-gradient(270deg, var(--rosa), var(--morado), var(--celeste));
-      background-size: 600% 600%;
-      animation: flowGradient 40s ease infinite;
-      padding: 20px;
-    }
-    nav {
+      background: #a5d8ff;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .tabs {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: flex-end;
-    }
-    .tabs input {
-      display: none;
-    }
-    .tabs label {
-      padding: 0.7rem 1.2rem;
-      background: var(--morado);
-      color: #fff;
-      border-radius: 12px 12px 0 0;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .tabs label:hover {
-      background: #c19adf;
-    }
-    .tab-content {
-      display: none;
-      padding: 2rem;
-      background: var(--rosa);
-      border-radius: 0 0 12px 12px;
-      width: 100%;
-    }
-    .tabs input#tab1:checked ~ #content1,
-    .tabs input#tab2:checked ~ #content2 {
-      display: block;
-    }
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .producto {
-      background: var(--blanco);
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-    .producto img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-    .producto h3 {
-      color: #333;
-      margin-bottom: 0.5rem;
-    }
-    .producto span {
-      display: block;
-      margin: 0.5rem 0;
-      font-weight: bold;
-      color: #555;
-    }
-    .color-circle {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      display: inline-block;
-    }
-    button.btn {
-      padding: 0.5rem 1rem;
-      background: var(--morado);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
-      padding: 1.2rem;
-      background: var(--celeste);
-      color: #333;
-      font-size: 0.9rem;
-    }
-    @keyframes flowGradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
     .cart-btn {
       position: relative;
+      font-size: 1.2rem;
+      background: #b38fd4;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
     }
     .cart-count {
       position: absolute;
-      top: -8px;
+      top: -10px;
       right: -10px;
       background: red;
       color: white;
+      font-size: 0.8rem;
       border-radius: 50%;
-      padding: 0 6px;
-      font-size: 0.7rem;
+      padding: 2px 6px;
+    }
+    main {
+      padding: 2rem;
+    }
+    .producto {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      max-width: 300px;
+    }
+    button {
+      background: #b38fd4;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <nav>
-      <div>
-        <img src="assets/logo.jpg" alt="Logo" style="height:50px;" />
-        <span style="font-size:1.5rem; vertical-align:middle">La Casita del Bebé</span>
-      </div>
-      <a href="#" class="snipcart-checkout btn cart-btn">
-        🛒 Carrito <span id="cart-count" class="cart-count">0</span>
-      </a>
-    </nav>
+    <h1>Tienda Demo</h1>
+    <a href="#" class="snipcart-checkout cart-btn">
+      🛒 Carrito <span id="cart-count" class="cart-count">0</span>
+    </a>
   </header>
 
   <main>
-    <div class="tabs">
-      <input type="radio" id="tab1" name="tab" checked /><label for="tab1">Coches</label>
-      <input type="radio" id="tab2" name="tab" /><label for="tab2">Encierros</label>
-
-      <div id="content1" class="tab-content">
-        <div class="productos">
-          <div class="producto">
-            <img src="assets/coche-mami-love-alice-rosa.jpg" alt="Coche Mami Love Alice" />
-            <h3>Coche Mami Love Alice</h3>
-            <p>Elegante y cómodo con diseño moderno.</p>
-            <div>
-              <span class="color-circle" style="background:#ffc0cb" data-src="assets/coche-mami-love-alice-rosa.jpg"></span>
-              <span class="color-circle" style="background:#808080" data-src="assets/coche-mami-love-alice-gris.jpg"></span>
-              <span class="color-circle" style="background:#000" data-src="assets/coche-mami-love-alice-negro.jpg"></span>
-            </div>
-            <span>₡78,000</span>
-            <button class="btn snipcart-add-item"
-              data-item-id="mami-love-alice"
-              data-item-name="Coche Mami Love Alice"
-              data-item-price="78000"
-              data-item-url="/tienda.html"
-              data-item-description="Coche elegante y cómodo con diseño moderno"
-              data-item-image="assets/coche-mami-love-alice-rosa.jpg">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div id="content2" class="tab-content">
-        <div class="productos">
-          <div class="producto">
-            <img src="assets/encierro-pelotero-negro.jpg" alt="Encierro Pelotero" />
-            <h3>Encierro Pelotero</h3>
-            <p>Amplio encierro tipo pelotero.</p>
-            <span>₡66,000</span>
-            <button class="btn snipcart-add-item"
-              data-item-id="encierro-pelotero"
-              data-item-name="Encierro Pelotero"
-              data-item-price="66000"
-              data-item-url="/tienda.html"
-              data-item-description="Encierro tipo pelotero para diversión segura."
-              data-item-image="assets/encierro-pelotero-negro.jpg">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-      </div>
+    <div class="producto">
+      <h3>Coche Bebé</h3>
+      <p>₡78,000</p>
+      <button
+        class="snipcart-add-item"
+        data-item-id="coche-bebe"
+        data-item-name="Coche Bebé"
+        data-item-price="78000"
+        data-item-url="/"
+        data-item-description="Coche de bebé elegante"
+        data-item-image="https://via.placeholder.com/300"
+      >
+        Añadir al carrito
+      </button>
     </div>
   </main>
 
-  <footer>© 2025 La Casita del Bebé · Todos los derechos reservados</footer>
-
   <!-- Snipcart -->
-  <div hidden id="snipcart" data-api-key="ZGE4NjAzNDEtOTI4NS00Zjg4LTk3MzItMjdmZGYxMTk3ZjUxNjM4ODQ3NDkxODY0MzUwNjcz" data-config-modal-style="side"></div>
+  <div hidden id="snipcart"
+    data-api-key="ZGE4NjAzNDEtOTI4NS00Zjg4LTk3MzItMjdmZGYxMTk3ZjUxNjM4ODQ3NDkxODY0MzUwNjcz"
+    data-config-modal-style="side">
+  </div>
   <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 
-  <!-- Color switching -->
+  <!-- Contador actualizado -->
   <script>
-    document.querySelectorAll('.color-circle').forEach(el => {
-      el.addEventListener('click', () => {
-        const parent = el.closest('.producto');
-        parent.querySelector('img').src = el.getAttribute('data-src');
-      });
+    document.addEventListener('snipcart.ready', () => {
+      const cartCount = document.getElementById('cart-count');
+
+      const updateCount = () => {
+        const cart = Snipcart.store.getState().cart;
+        const totalQty = cart.items.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalQty;
+      };
+
+      Snipcart.store.subscribe(updateCount);
+      updateCount(); // inicial
     });
   </script>
 
-  <!-- Contador de productos -->
-  <script>
-  window.SnipcartEvents = window.SnipcartEvents || [];
-
-  window.SnipcartEvents.push({
-    eventName: 'cart.closed',
-    callback: updateCartCount
-  });
-
-  window.SnipcartEvents.push({
-    eventName: 'item.added',
-    callback: updateCartCount
-  });
-
-  window.SnipcartEvents.push({
-    eventName: 'item.removed',
-    callback: updateCartCount
-  });
-
-  window.SnipcartEvents.push({
-    eventName: 'item.updated',
-    callback: updateCartCount
-  });
-
-  function updateCartCount() {
-    setTimeout(() => {
-      const el = document.querySelector('#cart-count');
-      const cart = window.Snipcart.store?.getState()?.cart;
-      if (cart && cart.items) {
-        const total = cart.items.reduce((sum, item) => sum + item.quantity, 0);
-        el.textContent = total;
-      }
-    }, 300); // esperar a que Snipcart actualice el store
-  }
-
-  document.addEventListener('DOMContentLoaded', updateCartCount);
-</script>
 </body>
 </html>
