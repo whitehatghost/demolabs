@@ -1104,18 +1104,20 @@
   </script>
 
   <!-- Script para cambio de pestanas -->
-<script>
-  function showTab(tabId) {
-    document.querySelectorAll('.tab-content').forEach(el => {
-      el.classList.remove('active');
-    });
-    const selectedTab = document.getElementById(tabId);
-    if (selectedTab) {
-      selectedTab.classList.add('active');
-    }
-  }
-  document.addEventListener('DOMContentLoaded', () => {
-    showTab('coches');
+  <script>
+  document.querySelectorAll('input[name="tab"]').forEach(tab => {
+    const scrollToTab = () => {
+      const id = tab.id.replace('tab', 'content');
+      const content = document.getElementById(id);
+      if (content) {
+        setTimeout(() => {
+          content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+      }
+    };
+
+    tab.addEventListener('change', scrollToTab);
+    tab.nextElementSibling.addEventListener('click', scrollToTab); // click en la etiqueta del tab
   });
 </script>
 
