@@ -3,42 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Tienda Demo</title>
 
-  <!-- Estilos -->
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+
   <style>
     body {
       font-family: sans-serif;
       margin: 0;
-      padding: 0;
     }
     header {
-      background: #a5d8ff;
+      background: #4e7ac7;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      color: white;
     }
     .cart-btn {
       position: relative;
-      font-size: 1.2rem;
-      background: #b38fd4;
-      color: white;
+      font-size: 1rem;
+      background: #1d3557;
       padding: 0.5rem 1rem;
       border-radius: 8px;
       text-decoration: none;
+      color: white;
     }
     .cart-count {
-      position: absolute;
-      top: -10px;
-      right: -10px;
       background: red;
       color: white;
       font-size: 0.8rem;
-      border-radius: 50%;
       padding: 2px 6px;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      right: -10px;
     }
     main {
       padding: 2rem;
@@ -49,7 +48,7 @@
       max-width: 300px;
     }
     button {
-      background: #b38fd4;
+      background: #457b9d;
       color: white;
       border: none;
       padding: 0.5rem 1rem;
@@ -61,25 +60,23 @@
 <body>
 
   <header>
-    <h1>Tienda Demo</h1>
+    <h1>Tienda</h1>
     <a href="#" class="snipcart-checkout cart-btn">
-      🛒 Carrito <span id="cart-count" class="cart-count">0</span>
+      🛒 Carrito <span class="cart-count" id="cart-count">0</span>
     </a>
   </header>
 
   <main>
     <div class="producto">
-      <h3>Coche Bebé</h3>
+      <h3>Coche Mami Love Alice</h3>
       <p>₡78,000</p>
-      <button
-        class="snipcart-add-item"
-        data-item-id="coche-bebe"
-        data-item-name="Coche Bebé"
+      <button class="snipcart-add-item"
+        data-item-id="coche-mami-love-alice"
+        data-item-name="Coche Mami Love Alice"
         data-item-price="78000"
         data-item-url="/"
         data-item-description="Coche de bebé elegante"
-        data-item-image="https://via.placeholder.com/300"
-      >
+        data-item-image="https://via.placeholder.com/300">
         Añadir al carrito
       </button>
     </div>
@@ -92,19 +89,17 @@
   </div>
   <script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
 
-  <!-- Contador -->
+  <!-- Contador funcional -->
   <script>
     document.addEventListener('snipcart.ready', () => {
-      const cartCount = document.getElementById('cart-count');
-
-      const updateCount = () => {
+      const countSpan = document.getElementById('cart-count');
+      const updateCartCount = () => {
         const cart = Snipcart.store.getState().cart;
-        const totalQty = cart.items.reduce((sum, item) => sum + item.quantity, 0);
-        cartCount.textContent = totalQty;
+        const total = cart.items.reduce((acc, item) => acc + item.quantity, 0);
+        countSpan.textContent = total;
       };
-
-      Snipcart.store.subscribe(updateCount);
-      updateCount();
+      Snipcart.store.subscribe(updateCartCount);
+      updateCartCount();
     });
   </script>
 
