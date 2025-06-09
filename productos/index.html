@@ -1022,6 +1022,23 @@
     </button>
   </div>
 </div>
+    <div id="nuevos" class="tab-content">
+  <div class="producto" data-base-id="nuevo-producto-demo" data-name="Nuevo Producto" data-price="12345" data-description="Este es un nuevo producto de ejemplo">
+    <img src="assets/nuevo-producto.jpg" alt="Nuevo Producto">
+    <h3>Nuevo Producto</h3>
+    <p>Este es un nuevo producto de ejemplo.</p>
+    <span>₡12,345</span>
+    <button class="btn snipcart-add-item"
+      data-item-id="nuevo-producto-demo"
+      data-item-name="Nuevo Producto"
+      data-item-price="12345"
+      data-item-url="/"
+      data-item-description="Este es un nuevo producto de ejemplo"
+      data-item-image="assets/nuevo-producto.jpg">
+      Añadir al carrito
+    </button>
+  </div>
+</div>
 
     
   </main>
@@ -1081,6 +1098,15 @@
       });
     });
   </script>
+  <script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+    document.getElementById(tabId).style.display = 'block';
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    showTab('coches');
+  });
+</script>
 
 </body>
 </html>
