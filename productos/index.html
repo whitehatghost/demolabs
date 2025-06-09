@@ -90,8 +90,9 @@
   .tab-content {
     display: none;
   }
-  input[type="radio"] {
-    display: none;
+   /* Este bloque activa el tab correspondiente */
+  .tabs-wrapper input[type="radio"]:checked + label + .contents > .tab-content {
+    display: block;
   }
   #tab1:checked ~ .contents #content1,
   #tab2:checked ~ .contents #content2,
