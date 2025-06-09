@@ -240,16 +240,40 @@
 
   <!-- Contador de productos -->
   <script>
-    document.addEventListener('snipcart.ready', () => {
-      const updateCartCount = () => {
-        const state = Snipcart.store.getState();
-        const cartItems = state.cart.items;
-        const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-        document.getElementById('cart-count').textContent = totalQuantity;
-      };
-      Snipcart.store.subscribe(updateCartCount);
-      updateCartCount();
-    });
-  </script>
+  window.SnipcartEvents = window.SnipcartEvents || [];
+
+  window.SnipcartEvents.push({
+    eventName: 'cart.closed',
+    callback: updateCartCount
+  });
+
+  window.SnipcartEvents.push({
+    eventName: 'item.added',
+    callback: updateCartCount
+  });
+
+  window.SnipcartEvents.push({
+    eventName: 'item.removed',
+    callback: updateCartCount
+  });
+
+  window.SnipcartEvents.push({
+    eventName: 'item.updated',
+    callback: updateCartCount
+  });
+
+  function updateCartCount() {
+    setTimeout(() => {
+      const el = document.querySelector('#cart-count');
+      const cart = window.Snipcart.store?.getState()?.cart;
+      if (cart && cart.items) {
+        const total = cart.items.reduce((sum, item) => sum + item.quantity, 0);
+        el.textContent = total;
+      }
+    }, 300); // esperar a que Snipcart actualice el store
+  }
+
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+</script>
 </body>
 </html>
