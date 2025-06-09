@@ -1086,7 +1086,8 @@
   <script>
   function showTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
-    document.getElementById(tabId).style.display = 'block';
+    const tab = document.getElementById(tabId);
+    if (tab) tab.style.display = 'block';
   }
   document.addEventListener('DOMContentLoaded', () => {
     showTab('coches');
