@@ -136,13 +136,15 @@ document.querySelectorAll('.color-circle').forEach(el => {
 <script>
   document.addEventListener('snipcart.ready', () => {
     const updateCount = () => {
-      const count = Snipcart.store.getState().cart.items.count;
-      document.getElementById('cart-count').textContent = count;
+      const state = Snipcart.store.getState();
+      const quantity = state.cart.items.reduce((acc, item) => acc + item.quantity, 0);
+      document.getElementById('cart-count').textContent = quantity;
     };
     Snipcart.store.subscribe(updateCount);
     updateCount(); // Inicial
   });
 </script>
+
 
 </body>
 </html>
