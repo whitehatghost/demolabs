@@ -86,6 +86,39 @@
   .tab-content {
     display: none;
   }
+    .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .tabs label {
+    background: #b38fd4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .tab-content {
+    display: none;
+  }
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6,
+  #tab7:checked ~ #content7,
+  #tab8:checked ~ #content8,
+  #tab9:checked ~ #content9,
+  #tab10:checked ~ #content10,
+  #tab11:checked ~ #content11,
+  #tab12:checked ~ #content12 {
+    display: block;
+  }
   </style>
 </head>
 <body>
@@ -99,23 +132,35 @@
 
   <main>
 
-    <div class="tabs">
-  <button onclick="showTab('coches')">Coches</button>
-  <button onclick="showTab('encierros')">Encierros</button>
-  <button onclick="showTab('sillas-comer')">Sillas de Comer</button>
-  <button onclick="showTab('sillas-carro')">Sillas para Carro</button>
-  <button onclick="showTab('mesedoras')">Mesedoras</button>
-  <button onclick="showTab('colechos')">Colechos</button>
-  <button onclick="showTab('cunas')">Cunas</button>
-  <button onclick="showTab('baneras')">Bañeras</button>
-  <button onclick="showTab('montables')">Montables</button>
-  <button onclick="showTab('jumpers')">Jumpers</button>
-  <button onclick="showTab('accesorios')">Accesorios</button>
-  <button onclick="showTab('nuevos')">Nuevos Productos</button>
+   <div class="tabs">
+  <input type="radio" id="tab1" name="tab" checked>
+  <label for="tab1">Coches</label>
+  <input type="radio" id="tab2" name="tab">
+  <label for="tab2">Encierros</label>
+  <input type="radio" id="tab3" name="tab">
+  <label for="tab3">Sillas de Comer</label>
+  <input type="radio" id="tab4" name="tab">
+  <label for="tab4">Sillas para Carro</label>
+  <input type="radio" id="tab5" name="tab">
+  <label for="tab5">Mesedoras</label>
+  <input type="radio" id="tab6" name="tab">
+  <label for="tab6">Colechos</label>
+  <input type="radio" id="tab7" name="tab">
+  <label for="tab7">Cunas</label>
+  <input type="radio" id="tab8" name="tab">
+  <label for="tab8">Bañeras</label>
+  <input type="radio" id="tab9" name="tab">
+  <label for="tab9">Montables</label>
+  <input type="radio" id="tab10" name="tab">
+  <label for="tab10">Jumpers</label>
+  <input type="radio" id="tab11" name="tab">
+  <label for="tab11">Accesorios</label>
+  <input type="radio" id="tab12" name="tab">
+  <label for="tab12">Nuevos Productos</label>
 </div>
     
     <!-- Producto: Coches -->
-    <div id="coches" class="tab-content active">
+    <div id="content1" class="tab-content">
     <div class="producto" data-base-id="mami-love-alice" data-name="Coche Mami Love Alice" data-price="78000" data-description="Coche elegante y cómodo con diseño moderno para bebés">
       <img src="assets/mami-love-alice-rosa.jpg" alt="Coche Mami Love Alice" />
       <h3>Coche Mami Love Alice</h3>
@@ -347,7 +392,7 @@
   </button>
 </div>
 <!-- Sección: Encierros -->
-<div id="encierros" class="tab-content active">
+<div id="content2" class="tab-content">
   <div class="producto" data-base-id="encierro-pelotero" data-name="Encierro Pelotero" data-price="66000" data-description="Amplio encierro tipo pelotero para diversión segura">
     <img src="assets/encierro-pelotero-negro.jpg" alt="Encierro Pelotero">
     <h3>Encierro Pelotero</h3>
@@ -414,7 +459,7 @@
 </div>
 
     <!-- Sección: Sillas de Comer -->
-<div id="sillas-comer" class="tab-content active">
+<div id="content3" class="tab-content">
   <div class="producto" data-base-id="silla-alta-jane" data-name="Silla Alta Jane" data-price="52000" data-description="Silla alta ajustable para bebé con bandeja removible">
     <img src="assets/silla-alta-jane-gris.jpg" alt="Silla Alta Jane">
     <h3>Silla Alta Jane</h3>
@@ -497,7 +542,7 @@
 </div>
 
     <!-- Sección: Cunas -->
-<div id="cunas" class="tab-content active">
+<div id="content7" class="tab-content">
   <div class="producto" data-base-id="cuna-colecho-dream" data-name="Cuna Colecho Dream" data-price="95000" data-description="Cuna colecho con altura ajustable para facilitar el apego">
     <img src="assets/cuna-colecho-dream-gris.jpg" alt="Cuna Colecho Dream">
     <h3>Cuna Colecho Dream</h3>
@@ -540,7 +585,7 @@
 </div>
 
     <!-- Sección: Sillas para Carro -->
-<div id="sillas-carro" class="tab-content active">
+<div id="content4" class="tab-content">
   <div class="producto" data-base-id="silla-duster" data-name="Silla Carro Duster" data-price="74000" data-description="Diseño resistente con protección lateral">
     <img src="assets/silla-duster.jpg" alt="Silla Carro Duster">
     <h3>Silla Carro Duster</h3>
@@ -655,7 +700,7 @@
 </div>
 
     <!-- Sección: Mesedoras -->
-<div id="mesedoras" class="tab-content">
+<div id="content5" class="tab-content">
   <div class="producto" data-base-id="mesedora-musical" data-name="Mesedora Musical" data-price="29500" data-description="Mesedora con vibración y música relajante">
     <img src="assets/mesedora-musical.jpg" alt="Mesedora Musical">
     <h3>Mesedora Musical</h3>
@@ -674,7 +719,7 @@
 </div>
 
     <!-- Sección: Colechos -->
-<div id="colechos" class="tab-content active">
+<div id="content6" class="tab-content">
   <div class="producto" data-base-id="colecho-madison" data-name="Colecho Madison" data-price="59000" data-description="Colecho con ruedas, altura ajustable y diseño moderno">
     <img src="assets/colecho-madison-rosa.jpg" alt="Colecho Madison">
     <h3>Colecho Madison</h3>
@@ -698,7 +743,7 @@
 </div>
 
     <!-- Sección: Bañeras -->
-<div id="baneras" class="tab-content active">
+<div id="content8" class="tab-content">
   <div class="producto" data-base-id="banera-cambiador" data-name="Bañera Cambiador" data-price="41000" data-description="Práctica y compacta con bandeja inferior de almacenamiento">
     <img src="assets/banera-cambiador.jpg" alt="Bañera Cambiador">
     <h3>Bañera Cambiador</h3>
@@ -769,7 +814,7 @@
   </div>
 </div>
     <!-- Sección: Montables -->
-<div id="montables" class="tab-content active">
+<div id="content9" class="tab-content">
   <div class="producto" data-base-id="montable-push-cr" data-name="Montable Push CR" data-price="42000" data-description="Montable con manija de empuje y diseño divertido">
     <img src="assets/montable-push-cr.jpg" alt="Montable Push CR">
     <h3>Montable Push CR</h3>
@@ -824,7 +869,7 @@
 </div>
 
     <!-- Sección: Jumpers -->
-<div id="jumpers" class="tab-content active">
+<div id="content10" class="tab-content">
   <div class="producto" data-base-id="jumper-carrito" data-name="Jumper Carrito" data-price="49000" data-description="Jumper en forma de carrito para horas de diversión">
     <img src="assets/jumper-carrito.jpg" alt="Jumper Carrito">
     <h3>Jumper Carrito</h3>
@@ -865,7 +910,7 @@
   </div>
 </div>
     <!-- Sección: Accesorios -->
-<div id="accesorios" class="tab-content active">
+<div id="content11" class="tab-content">
   <div class="producto" data-base-id="gimnasio" data-name="Gimnasio 2 en 1" data-price="42000" data-description="Centro de actividades y gimnasio portátil para bebés">
     <img src="assets/gimnasio.jpg" alt="Gimnasio 2 en 1">
     <h3>Gimnasio 2 en 1</h3>
@@ -1026,7 +1071,7 @@
     </button>
   </div>
 </div>
-    <div id="nuevos" class="tab-content active">
+    <div id="content12" class="tab-content">
   <div class="producto" data-base-id="nuevo-producto-demo" data-name="Nuevo Producto" data-price="12345" data-description="Este es un nuevo producto de ejemplo">
     <img src="assets/nuevo-producto.jpg" alt="Nuevo Producto">
     <h3>Nuevo Producto</h3>
