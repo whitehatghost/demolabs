@@ -1104,14 +1104,14 @@
   </script>
 
   <!-- Script para cambio de pestanas -->
- <script>
+<script>
   function showTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(el => {
-      el.style.display = 'none';
+      el.classList.remove('active');
     });
     const selectedTab = document.getElementById(tabId);
     if (selectedTab) {
-      selectedTab.style.display = 'block';
+      selectedTab.classList.add('active');
     }
   }
   document.addEventListener('DOMContentLoaded', () => {
