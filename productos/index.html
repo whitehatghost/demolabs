@@ -1105,22 +1105,19 @@
 
   <!-- Script para cambio de pestanas -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tabs button');
-    const contents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(button => {
-      button.addEventListener('click', () => {
-        const target = button.getAttribute('data-tab');
-
-        contents.forEach(c => c.classList.remove('active'));
-        const selected = document.getElementById(target);
-        if (selected) {
-          selected.classList.add('active');
-          selected.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => {
+      el.classList.remove('active');
     });
+    const selectedTab = document.getElementById(tabId);
+    if (selectedTab) {
+      selectedTab.classList.add('active');
+      selectedTab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    showTab('coches');
   });
 </script>
 
