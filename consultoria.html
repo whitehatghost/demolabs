@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Costa Rica Realty Pro | Consultoría Inmobiliaria en Costa Rica</title>
+  <meta name="description" content="Costa Rica Realty Pro: consultoría y corretaje inmobiliario en Costa Rica. Especialistas en playa y naturaleza: valuación, marketing, due diligence y cierre. Propiedades premium en Guanacaste, Puntarenas, Caribe y Valle Central." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://costaricarealtypro.com/" />
+  <meta name="robots" content="index,follow"/>
+  <meta name="keywords" content="bienes raíces Costa Rica, comprar casa en Costa Rica, invertir en Costa Rica, propiedades en la playa, bienes raíces Guanacaste, realtor Costa Rica, consultoría inmobiliaria, luxury real estate Costa Rica"/>
+  <meta property="og:site_name" content="Costa Rica Realty Pro"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Consultoría Inmobiliaria en Costa Rica | Costa Rica Realty Pro"/>
+  <meta property="og:description" content="Expertos en playa y naturaleza: valuación, marketing, legal y cierre. Encuentra villas, condos y lotes en Costa Rica."/>
+  <meta property="og:url" content="https://costaricarealtypro.com/"/>
+  <meta property="og:image" content="https://costaricarealtypro.com/og-cover.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Costa Rica Realty Pro"/>
+  <meta name="twitter:description" content="Consultoría y corretaje inmobiliario en Costa Rica. Propiedades de playa y naturaleza."/>
+  <meta name="twitter:image" content="https://costaricarealtypro.com/og-cover.jpg"/>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#1c1f24;
+      --muted:#5a6573;
+      --brand:#0b665b;        /* teal oscuro */
+      --brand-2:#24b89d;      /* teal claro */
+      --sand:#f4efe9;         /* arena CR */
+      --sea:#ecf8f5;          /* aqua suave */
+      --line:rgba(28,31,36,.12);
+      --shadow-lg:0 10px 30px rgba(16,24,40,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    html{background:linear-gradient(180deg, var(--sand) 0%, var(--sea) 100%)}
+    body{font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica Neue,Arial;color:var(--ink)}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.15rem;border-radius:14px;font-weight:700;letter-spacing:.2px;transition:transform .08s ease, box-shadow .2s ease, background .2s ease;border:0}
+    .btn:is(:hover,:focus){transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg, var(--brand), var(--brand-2));color:#fff;box-shadow:0 6px 16px rgba(11,102,91,.25)}
+    .btn-ghost{background:rgba(255,255,255,.85);color:var(--ink);border:1px solid var(--line)}
+
+    /* Header / Navbar */
+    header{position:fixed;top:0;left:0;right:0;z-index:50;background:transparent;backdrop-filter:saturate(140%) blur(6px);border-bottom:0;transition:background .25s ease, box-shadow .25s ease}
+    nav{display:flex;align-items:center;height:72px;gap:2rem}
+    .brand-logo{height:40px;width:auto;margin-right:auto}
+    .navlinks{display:flex;gap:1.2rem}
+    .navlinks a{color:#fff;font-weight:600;padding:.6rem .8rem;border-radius:10px}
+    .navlinks a:hover{background:rgba(255,255,255,.18)}
+    header:not(.scrolled){background:rgba(0,0,0,.18)}
+    header.scrolled{background:#fff;box-shadow:0 6px 18px rgba(16,24,40,.06)}
+    header.scrolled .navlinks a{color:var(--ink)}
+    header.scrolled .navlinks a:hover{background:rgba(0,0,0,.06)}
+
+    /* Hero */
+    .hero{position:relative}
+    .hero video{width:100%;height:80vh;object-fit:cover;display:block}
+    .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.35) 35%, rgba(0,0,0,.35))}
+    .hero .center{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 20px}
+    .title{font-family:Merriweather, Georgia, serif;font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.15;margin:.3rem 0 .6rem;font-weight:700}
+    .lead{color:var(--muted);font-size:clamp(1rem,1.2vw,1.1rem)}
+
+    /* Sections */
+    section{padding:72px 0;border-top:1px solid var(--line)}
+    .section-title{font-weight:800;font-size:1.9rem;margin:0 0 12px;color:var(--brand)}
+    .section-lead{color:var(--muted);max-width:760px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+    .card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--brand-2);border-radius:16px;padding:18px;box-shadow:var(--shadow-lg);transition:transform .18s ease, box-shadow .25s ease}
+    .card h3{margin:.2rem 0 .4rem}
+    .card p{color:var(--muted)}
+    .card:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(16,24,40,.12)}
+
+    /* Forms */
+    label{display:block;font-size:.85rem;color:var(--muted);margin:2px 0 6px}
+    input,textarea,select{width:100%;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.2);color:var(--ink)}
+    textarea{min-height:120px}
+
+    /* Badges & media */
+    .img-zoom{overflow:hidden;border-radius:12px}
+    .img-zoom img{transition:transform .6s ease}
+    .card:hover .img-zoom img{transform:scale(1.05)}
+    .badge{display:inline-block;padding:.35rem .6rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:700;font-size:.8rem}
+    .price-chip{position:absolute;left:10px;bottom:10px;padding:.35rem .55rem;border-radius:10px;background:rgba(0,0,0,.65);color:#fff;font-weight:700}
+    .status{position:absolute;left:10px;top:10px}
+
+    /* Filters sticky */
+    .filters{position:sticky;top:74px;z-index:30;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;box-shadow:0 10px 24px rgba(16,24,40,.06)}
+
+    /* Floating WhatsApp */
+    .float-wa{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1rem;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border-radius:999px;box-shadow:0 12px 24px rgba(18,140,126,.35);font-weight:700}
+    .float-wa:hover{transform:translateY(-1px)}
+
+    /* Section dividers & colored sections */
+    .divider{display:block;height:32px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.06) 38%, transparent)}
+    .section-color{background:linear-gradient(180deg,#ffffff 0%, #f1fbf8 100%)}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .cards{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .cards{grid-template-columns:1fr}
+      nav .navlinks{display:none}
+    }
+    /* FAQ & details */
+    details{background:#fff;border:1px solid var(--line);border-left:4px solid var(--brand-2);border-radius:12px;padding:12px 14px}
+    details+details{margin-top:10px}
+    details summary{cursor:pointer;font-weight:700}
+
+    /* Testimonials */
+    .testi{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+    .quote{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow-lg)}
+    .quote footer{margin-top:8px;color:var(--muted);font-weight:600}
+
+    /* Trust strip */
+    .trust{display:flex;gap:22px;align-items:center;flex-wrap:wrap;opacity:.9}
+    .trust img{height:28px;width:auto;filter:grayscale(100%)}
+
+    /* Sticky bottom CTA (mobile) */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;gap:10px;justify-content:center;padding:10px;background:rgba(255,255,255,.95);border-top:1px solid var(--line);box-shadow:0 -8px 18px rgba(16,24,40,.08)}
+    @media (min-width:860px){.sticky-cta{display:none}}
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="hdr">
+    <div class="container">
+      <nav>
+        <img class="brand-logo" src="/img/logo-cr-realty-pro.png" alt="Costa Rica Realty Pro"/>
+        <div class="navlinks">
+          <a href="#about">Quiénes somos</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#consultoria">Consultoría</a>
+          <a href="#propiedades">Propiedades</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero video -->
+  <section class="hero" aria-label="Video playa Costa Rica">
+    <video autoplay muted loop playsinline poster="/media/hero-poster.jpg">
+      <source src="/media/hero-cr-beach.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+    <div class="center">
+      <div class="container">
+        <h1 class="title" style="color:#fff">Vive tu propiedad ideal en la <span style="color:#5ce1b9">Costa Rica</span> de playa y naturaleza</h1>
+        <p class="lead" style="color:#e7eef6;max-width:920px;margin:0 auto 16px">Compra, venta e inversión con consultoría premium: datos, marketing de alto nivel y due diligence legal.</p>
+        <form id="heroSearch" style="display:grid;grid-template-columns:1fr auto;gap:8px;max-width:620px;margin:12px auto 0;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.35)">
+          <select id="qProv" style="padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.25);color:#fff">
+            <option value="">Provincia</option>
+            <option>San José</option>
+            <option>Alajuela</option>
+            <option>Cartago</option>
+            <option>Heredia</option>
+            <option>Guanacaste</option>
+            <option>Puntarenas</option>
+            <option>Limón</option>
+          </select>
+          <button class="btn btn-primary" type="button" id="btnSearch">Buscar</button>
+        </form>
+        <div style="display:flex;gap:12px;margin-top:18px;justify-content:center;flex-wrap:wrap">
+          <a href="#propiedades" class="btn btn-primary">Ver propiedades</a>
+          <a href="#contacto" class="btn btn-ghost">Agendar asesoría</a>
+        </div>
+      </div>
+    </div>
+    <button id="toggleVideo" class="btn" style="position:absolute;right:16px;bottom:16px;background:#fff">Pausar video</button>
+    <div class="divider"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h3 class="section-title">Quiénes somos</h3>
+      <p class="section-lead">Equipo senior en bienes raíces con más de 12 años en Costa Rica. Especialistas en propiedades cerca del mar y en entornos naturales. Combinamos datos, marketing de alto nivel y due diligence legal para maximizar valor y minimizar riesgos.</p>
+      <div class="cards">
+        <article class="card"><h3>+250 operaciones</h3><p>Ventas, compras y alquileres asesorados end-to-end.</p></article>
+        <article class="card"><h3>Playa & naturaleza</h3><p>Guanacaste, Pacífico Central, Caribe y montaña.</p></article>
+        <article class="card"><h3>Transparencia</h3><p>KPIs de captación, visitas, ofertas y tiempo de venta.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="section-color">
+    <div class="container">
+      <h3 class="section-title">Servicios de consultoría inmobiliaria</h3>
+      <p class="section-lead">Acompañamiento integral para propietarios, desarrolladores e inversionistas. Enfocados en cerrar negocios reales en Costa Rica.</p>
+      <div class="cards">
+        <article class="card"><h3>Avalúo & Mercado</h3><p>Precio objetivo, comparables y absorción para decidir con datos.</p></article>
+        <article class="card"><h3>Marketing</h3><p>Foto/video/dron, pauta segmentada, open houses y calificación de leads.</p></article>
+        <article class="card"><h3>Due Diligence</h3><p>Revisión registral, contratos y mitigación de riesgos.</p></article>
+        <article class="card"><h3>Financiamiento</h3><p>Modelos y acceso a banca/alternativas para cerrar el deal.</p></article>
+        <article class="card"><h3>Gestión de Proyectos</h3><p>Permisos, cronograma, proveedores y control de calidad.</p></article>
+        <article class="card"><h3>Brokerage</h3><p>Compra, venta y alquiler con negociación estratégica.</p></article>
+      </div>
+      <div class="trust" style="margin-top:20px">
+        <span style="font-weight:700;color:var(--muted)">Confiado por:</span>
+        <img loading="lazy" src="https://dummyimage.com/140x40/ffffff/aaa.png&text=Notaría+CR" alt="Notaría CR"/>
+        <img loading="lazy" src="https://dummyimage.com/140x40/ffffff/aaa.png&text=Constructora" alt="Constructora"/>
+        <img loading="lazy" src="https://dummyimage.com/140x40/ffffff/aaa.png&text=Banco" alt="Banco"/>
+        <img loading="lazy" src="https://dummyimage.com/140x40/ffffff/aaa.png&text=HOA" alt="HOA"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultoría -->
+  <section id="consultoria">
+    <div class="container">
+      <h3 class="section-title">Consultoría en Bienes Raíces</h3>
+      <p class="section-lead">Diagnóstico integral y plan accionable para vender, comprar o invertir con seguridad y mejor retorno.</p>
+      <div class="cards">
+        <article class="card"><h3>Estrategia & Pricing</h3><p>Valuación profesional, comparables reales y plan de salida/compra.</p></article>
+        <article class="card"><h3>Marketing & Demanda</h3><p>Producción visual y campañas; pipeline con seguimiento.</p></article>
+        <article class="card"><h3>Legal & Riesgos</h3><p>Debida diligencia hasta escrituración.</p></article>
+        <article class="card"><h3>Finanzas & Cierre</h3><p>Modelos, negociación y acompañamiento al cierre.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Propiedades -->
+  <section id="propiedades" class="section-color">
+    <div class="container">
+      <h3 class="section-title">Propiedades destacadas</h3>
+      <p class="section-lead">Explora selección en playa, naturaleza y ciudad. Actualiza precios y datos fácilmente en el listado.</p>
+      <div class="filters" id="filters" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0 18px">
+        <label for="fProv" style="font-weight:600">Provincia</label>
+        <select id="fProv" style="padding:10px 12px;border-radius:10px;border:1px solid var(--line)">
+          <option value="">Todas</option>
+          <option>San José</option>
+          <option>Alajuela</option>
+          <option>Cartago</option>
+          <option>Heredia</option>
+          <option>Guanacaste</option>
+          <option>Puntarenas</option>
+          <option>Limón</option>
+        </select>
+        <button id="fApply" class="btn btn-primary">Filtrar</button>
+      </div>
+      <div class="cards" id="prop-grid" style="grid-template-columns:repeat(3,1fr)"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container" style="display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center">
+      <div class="card">
+        <h3 class="section-title" style="margin-bottom:6px">¿Listo para vender o invertir?</h3>
+        <p class="section-lead">Agenda una reunión inicial sin costo. Revisamos tu caso y definimos una estrategia.</p>
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <a href="#contacto" class="btn btn-primary">Agendar asesoría</a>
+          <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <div class="card">
+        <figure class="img-zoom"><img alt="Casa contemporánea con piscina" src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2d1e?q=80&w=1600&auto=format&fit=crop"/></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="section-color">
+    <div class="container">
+      <h3 class="section-title">Testimonios</h3>
+      <p class="section-lead">Historias reales de clientes que ya compraron, vendieron o invirtieron en Costa Rica.</p>
+      <div class="testi" id="testi">
+        <blockquote class="quote"><p>“Vendimos en 34 días gracias al pricing y las campañas. El equipo nos guió hasta el cierre.”</p><footer>— Andrea, Escazú</footer></blockquote>
+        <blockquote class="quote"><p>“Nos consiguieron un condo frente al mar y coordinaron todo el due diligence con la notaría.”</p><footer>— Daniel, Jacó</footer></blockquote>
+        <blockquote class="quote"><p>“Me ayudaron a evaluar un lote en Guanacaste con comparables y pros/contras del plan regulador.”</p><footer>— Sofía, Santa Cruz</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="faq" class="section-color">
+    <div class="container">
+      <h3 class="section-title">Preguntas frecuentes</h3>
+      <details><summary>¿Trabajan en todo Costa Rica?</summary><p>Sí. Principalmente Guanacaste, Pacífico Central, Caribe y Gran Área Metropolitana.</p></details>
+      <details><summary>¿Cómo es el proceso de consultoría?</summary><p>1) Diagnóstico, 2) plan con pricing/marketing/legal, 3) ejecución, 4) negociación y cierre.</p></details>
+      <details><summary>¿Pueden coordinar notaría y bancos?</summary><p>Sí, trabajamos con notarios y bancos locales para agilizar el cierre.</p></details>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="container">
+      <h3 class="section-title">Contacto</h3>
+      <p class="section-lead">Cuéntanos sobre tu propiedad o proyecto. Respondemos en menos de 24h hábiles.</p>
+      <div class="cards" style="grid-template-columns:1.2fr .8fr">
+        <div class="card">
+          <form name="contacto" onsubmit="event.preventDefault(); this.reset(); alert('¡Gracias! Te contactaremos pronto.');">
+            <div>
+              <label>Nombre</label>
+              <input type="text" required placeholder="Tu nombre" />
+            </div>
+            <div>
+              <label>Correo</label>
+              <input type="email" required placeholder="nombre@correo.com" />
+            </div>
+            <div>
+              <label>Teléfono</label>
+              <input type="tel" placeholder="+506…" />
+            </div>
+            <div>
+              <label>Interés</label>
+              <select>
+                <option>Valuación</option>
+                <option>Compra/Venta</option>
+                <option>Due Diligence</option>
+                <option>Marketing</option>
+                <option>Financiación</option>
+              </select>
+            </div>
+            <div class="full">
+              <label>Mensaje</label>
+              <textarea placeholder="Cuéntanos brevemente tu caso"></textarea>
+            </div>
+            <div class="full" style="display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn btn-primary" type="submit">Enviar</button>
+              <a class="btn btn-ghost" href="https://wa.me/50689840662" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </form>
+        </div>
+        <aside class="card" style="display:flex;flex-direction:column;gap:10px">
+          <div><strong>Oficina</strong><p style="margin:.2rem 0 0;color:var(--muted)">San José, Costa Rica · Atención nacional</p></div>
+          <div><strong>Correo</strong><p style="margin:.2rem 0 0"><a href="mailto:contacto@costaricarealtypro.com">contacto@costaricarealtypro.com</a></p></div>
+          <div><strong>Teléfono</strong><p style="margin:.2rem 0 0"><a href="tel:+50600000000">+506 0000 0000</a></p></div>
+          <div><strong>Horario</strong><p style="margin:.2rem 0 0;color:var(--muted)">Lun–Vie • 9:00–18:00</p></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:36px 0;border-top:1px solid var(--line);color:var(--muted)">
+      <div>© <span id="y"></span> Costa Rica Realty Pro. Todos los derechos reservados.</div>
+      <div style="display:flex;gap:12px"><a href="#">Términos</a><a href="#">Privacidad</a><a href="#">Cookies</a></div>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom CTA (mobile) -->
+  <div class="sticky-cta" role="region" aria-label="Acciones rápidas">
+    <a class="btn btn-primary" href="https://wa.me/50689840662?text=Hola%20quiero%20asesor%C3%ADa%20inmobiliaria" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn-ghost" href="#contacto">Agendar asesoría</a>
+    <a class="btn btn-ghost" href="https://calendly.com/tu-calendario/asesoria" target="_blank" rel="noopener">Reservar llamada</a>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a class="float-wa" href="https://wa.me/50689840662" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+
+  <script>
+    // Año
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Header scroll change
+    const hdr = document.getElementById('hdr');
+    const onScroll = () => { if (window.scrollY > 10) hdr.classList.add('scrolled'); else hdr.classList.remove('scrolled'); };
+    window.addEventListener('scroll', onScroll); onScroll();
+
+    // Video toggle
+    const btn = document.getElementById('toggleVideo');
+    if(btn){
+      const v = document.querySelector('.hero video');
+      btn.addEventListener('click',()=>{ if(v.paused){ v.play(); btn.textContent='Pausar video'; } else { v.pause(); btn.textContent='Reproducir video'; } });
+    }
+
+    // === Datos de propiedades (editable) ===
+    const PROPS = [
+      {id:'GX001', title:'Villa de playa – Tamarindo', type:'Villa', location:'Guanacaste', price:1250000, bed:5, bath:5, area:480, img:'https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1600&auto=format&fit=crop', tag:'Frente al mar'},
+      {id:'PC201', title:'Condo con vista – Jacó', type:'Condominio', location:'Puntarenas', price:345000, bed:2, bath:2, area:98, img:'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1600&auto=format&fit=crop', tag:'Vista al mar'},
+      {id:'SJ310', title:'Casa moderna – Escazú', type:'Casa', location:'San José', price:695000, bed:4, bath:3.5, area:320, img:'https://images.unsplash.com/photo-1502003148287-a82ef80a6abc?q=80&w=1600&auto=format&fit=crop', tag:'Premium'},
+      {id:'CR410', title:'Lote natural – Puerto Viejo', type:'Lote', location:'Limón', price:98000, bed:0, bath:0, area:1200, img:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop', tag:'Cerca de la playa'},
+      {id:'AL115', title:'Retiro en montaña – Poás', type:'Casa', location:'Alajuela', price:289000, bed:3, bath:2, area:180, img:'https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1600&auto=format&fit=crop', tag:'Naturaleza'},
+      {id:'HE520', title:'Condo urbano – Heredia', type:'Condominio', location:'Heredia', price:175000, bed:2, bath:2, area:86, img:'https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1600&auto=format&fit=crop', tag:'Amenidades'}
+    ];
+
+    // Render de propiedades
+    const grid = document.getElementById('prop-grid');
+    function render(list){
+      grid.innerHTML = list.map(p => `
+        <article class="card" data-id="${p.id}" data-type="${p.type}" data-price="${p.price}" data-location="${p.location.toLowerCase()}">
+          <div style="position:relative" class="img-zoom">
+            <img src="${p.img}" alt="${p.title}">
+            ${p.tag ? `<span class=\"badge status\">${p.tag}</span>` : ''}
+            <span class="price-chip">$${(Math.round(p.price)).toLocaleString('en-US')} USD</span>
+          </div>
+          <h3 style="margin:.6rem 0 .2rem">${p.title}</h3>
+          <p style="color:var(--muted);margin:0 0 .3rem">${p.location} • ${p.area? p.area+ ' m²' : ''} ${p.bed? '• '+p.bed+' hab' : ''} ${p.bath? '• '+p.bath+' baños' : ''}</p>
+          <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="#contacto">Quiero información</a>
+            <a class="btn btn-ghost" href="#">Ver detalles</a>
+          </div>
+        </article>`).join('');
+    }
+    render(PROPS);
+
+    // Filtro por provincia
+    function applyFilters(){
+      const prov = (document.getElementById('fProv')?.value || '').toLowerCase();
+      const out = !prov ? PROPS : PROPS.filter(p => p.location.toLowerCase() === prov);
+      render(out);
+    }
+
+    document.getElementById('fApply')?.addEventListener('click', applyFilters);
+    document.getElementById('btnSearch')?.addEventListener('click', ()=>{
+      const qp = document.getElementById('qProv')?.value || '';
+      const fProv = document.getElementById('fProv');
+      if(fProv){ fProv.value = qp; }
+      applyFilters();
+      document.querySelector('#propiedades')?.scrollIntoView({behavior:'smooth'});
+    });
+
+    // Smooth anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => { const id = a.getAttribute('href'); if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'}); }});
+    });
+
+    // Parallax hero text (ligero)
+    const center = document.querySelector('.hero .center');
+    window.addEventListener('scroll',()=>{
+      const y = Math.min(60, window.scrollY/6);
+      center.style.transform = `translateY(${y}px)`;
+    });
+
+    // ================= Test cases (console) =================
+    (function runTests(){
+      console.log('%cRunning UI tests…','font-weight:bold');
+      // Test 1: render inicial dibuja la misma cantidad de cards que PROPS
+      console.assert(document.querySelectorAll('#prop-grid .card').length === PROPS.length, 'Render inicial debe mostrar todas las propiedades');
+      // Test 2: filtro por provincia existente
+      const fProv = document.getElementById('fProv');
+      fProv.value = 'Guanacaste';
+      applyFilters();
+      const cardsAfter = Array.from(document.querySelectorAll('#prop-grid .card'));
+      const allMatch = cardsAfter.every(el => el.getAttribute('data-location') === 'guanacaste');
+      console.assert(allMatch, 'Filtro por provincia debe dejar solo Guanacaste');
+      // Reset
+      fProv.value='';
+      applyFilters();
+      console.log('%cTests OK','color:green');
+    })();
+  </script>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"RealEstateAgent",
+    "name":"Costa Rica Realty Pro",
+    "url":"https://costaricarealtypro.com/",
+    "areaServed":"CR",
+    "address":{"@type":"PostalAddress","addressCountry":"CR","addressLocality":"San José"}
+  }</script>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "serviceType":"Consultoría inmobiliaria",
+    "provider":{"@type":"Organization","name":"Costa Rica Realty Pro"},
+    "areaServed":"Costa Rica",
+    "availableChannel":{"@type":"ServiceChannel","serviceUrl":"https://costaricarealtypro.com/#contacto"}
+  }</script>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"¿Trabajan en todo Costa Rica?","acceptedAnswer":{"@type":"Answer","text":"Sí. Principalmente Guanacaste, Pacífico Central, Caribe y GAM."}},
+      {"@type":"Question","name":"¿Cómo es el proceso de consultoría?","acceptedAnswer":{"@type":"Answer","text":"1) Diagnóstico, 2) plan con pricing/marketing/legal, 3) ejecución, 4) negociación y cierre."}},
+      {"@type":"Question","name":"¿Pueden coordinar notaría y bancos?","acceptedAnswer":{"@type":"Answer","text":"Sí, trabajamos con notarios y bancos locales."}}
+    ]
+  }</script>
+
+</body>
+</html>
